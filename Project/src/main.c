@@ -42,7 +42,7 @@ void front_light_control()
 {
 	//add task here
 	dark = is_dark();
-	if(dark)
+	if(get_light() < 0x00F5)
 	{
 		light_on();
 	}
@@ -56,7 +56,7 @@ void fan_control()
 {
 	temp = get_temp();
 	
-	if(temp > 35.0)
+	if(temp > 33.0)
 	{
 		motor_on();
 	}
@@ -67,7 +67,7 @@ void fan_control()
 }
 void house_light_control()
 {
-	if(getdistance() < 0.2)
+	if(getdistance() < 0.15)
 	{
 		if(passed)
 		{

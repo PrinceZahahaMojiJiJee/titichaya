@@ -41,7 +41,9 @@ compiling main.c...
   void light_off();
 ..\inc\light_sensor.h(19): warning:  #1295-D: Deprecated declaration is_dark - give arg types
   bool is_dark();
-..\inc\light_sensor.h(64): warning:  #1-D: last line of file ends without a newline
+..\inc\light_sensor.h(20): warning:  #1295-D: Deprecated declaration get_light - give arg types
+  uint16_t get_light();
+..\inc\light_sensor.h(74): warning:  #1-D: last line of file ends without a newline
   }
 ..\inc\temp_sensor.h(23): warning:  #1295-D: Deprecated declaration motor_config - give arg types
   void motor_config();
@@ -49,19 +51,25 @@ compiling main.c...
   void motor_on();
 ..\inc\temp_sensor.h(25): warning:  #1295-D: Deprecated declaration motor_off - give arg types
   void motor_off();
-..\inc\temp_sensor.h(190): warning:  #1-D: last line of file ends without a newline
+..\inc\temp_sensor.h(30): warning:  #1295-D: Deprecated declaration get_temp - give arg types
+  float get_temp();
+..\inc\temp_sensor.h(191): warning:  #1-D: last line of file ends without a newline
   }
-..\src\main.c(7): warning:  #1295-D: Deprecated declaration front_light_control - give arg types
+..\inc\ultrasonic.h(132): warning:  #1-D: last line of file ends without a newline
+  }
+..\src\main.c(8): warning:  #1295-D: Deprecated declaration front_light_control - give arg types
   __task void front_light_control();
-..\src\main.c(8): warning:  #1295-D: Deprecated declaration fan_control - give arg types
+..\src\main.c(9): warning:  #1295-D: Deprecated declaration fan_control - give arg types
   __task void fan_control();
-..\src\main.c(41): warning:  #1461-D: function declared with "noreturn" does return
+..\src\main.c(15): warning:  #1295-D: Deprecated declaration house_light_control - give arg types
+  void house_light_control();
+..\src\main.c(53): warning:  #1461-D: function declared with "noreturn" does return
   }
-..\src\main.c(55): warning:  #1-D: last line of file ends without a newline
+..\src\main.c(67): warning:  #1461-D: function declared with "noreturn" does return
   }
-..\src\main.c(55): warning:  #1461-D: function declared with "noreturn" does return
+..\src\main.c(91): warning:  #1-D: last line of file ends without a newline
   }
-..\src\main.c: 15 warnings, 0 errors
+..\src\main.c: 19 warnings, 0 errors
 compiling stm32l1xx_ll_lcd.c...
 compiling stm32l152_glass_lcd.c...
 compiling stm32l1xx_ll_pwr.c...
@@ -70,8 +78,8 @@ compiling RTX_Conf_CM.c...
 compiling stm32l1xx_ll_gpio.c...
 compiling stm32l1xx_ll_utils.c...
 linking...
-Program Size: Code=6516 RO-data=320 RW-data=72 ZI-data=14632  
-".\Objects\STM32L152RB.axf" - 0 Error(s), 15 Warning(s).
+Program Size: Code=7828 RO-data=320 RW-data=104 ZI-data=14632  
+".\Objects\STM32L152RB.axf" - 0 Error(s), 19 Warning(s).
 
 <h2>Software Packages used:</h2>
 

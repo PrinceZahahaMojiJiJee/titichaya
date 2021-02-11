@@ -17,6 +17,7 @@ void set_up_light();
 void light_on();
 void light_off();
 bool is_dark();
+uint16_t get_light();
 
 void set_up_light_sensor()
 {
@@ -44,6 +45,15 @@ bool is_dark()
 		return true;
 	}
 	return false;
+}
+
+uint16_t get_light()
+{
+	ADC1->CR2 |= (1<<30);
+	while((ADC1->SR & (1<<1)) == 0);
+	ADC_DATA = ADC1->DR;
+	
+	return ADC_DATA;
 }
 
 void set_up_light()
