@@ -6,7 +6,7 @@
 #include "stm32l1xx_ll_rcc.h"
 #include "stm32l1xx_ll_utils.h"
 
-#define LIGHT_SENSITIVE 0x00AF//high value sensitive
+#define LIGHT_SENSITIVE 0x00FF//high value sensitive
 
 typedef enum{false, true}bool;
 

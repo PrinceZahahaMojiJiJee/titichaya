@@ -27,8 +27,9 @@ void motor_off();
 uint8_t temp1, temp2;
 uint16_t t_temp;
 float real_temp;
+float get_temp();
 
-int get_temp()
+float get_temp()
 {
 	//Send reset pulse
 	DS1820_ResetPulse();
