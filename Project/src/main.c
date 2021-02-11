@@ -7,12 +7,13 @@
 OS_TID front_light, fan;
 __task void front_light_control();
 __task void fan_control();
+void house_light_control();
 
 bool dark = false;
 float temp;
 bool is_on = false;
 bool passed = false;
-void house_light_control();
+bool at_home = false;
 
 int main()
 {
@@ -55,10 +56,16 @@ void front_light_control()
 void fan_control()
 {
 	temp = get_temp();
-	
-	if(temp > 33.0)
+	if(at_home)
 	{
-		motor_on();
+		if(temp > 33.0)
+		{
+			motor_on();
+		}
+		else
+		{
+			motor_off();
+		}
 	}
 	else
 	{
@@ -75,11 +82,13 @@ void house_light_control()
 			{
 				house_light_on();
 				is_on = true;
+				at_home = true;
 			}
 			else
 			{
 				house_light_off();
 				is_on = false;
+				at_home = false;
 			}
 			passed = false;
 		}
