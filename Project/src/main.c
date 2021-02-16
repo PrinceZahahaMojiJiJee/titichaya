@@ -31,6 +31,14 @@ int main()
 	set_up_house_light();
 	house_light_off();
 	
+	house_light_on();
+	motor_on();
+	light_on();
+	LL_mDelay(1000);
+	house_light_off();
+	motor_off();
+	light_off();
+	
 	while(1)
 	{
 		front_light_control();
@@ -43,7 +51,7 @@ void front_light_control()
 {
 	//add task here
 	dark = is_dark();
-	if(get_light() < 0x00F5)
+	if(get_light() < 0x01FF)
 	{
 		light_on();
 	}
@@ -58,7 +66,7 @@ void fan_control()
 	temp = get_temp();
 	if(at_home)
 	{
-		if(temp > 33.0)
+		if(temp > 28.0)
 		{
 			motor_on();
 		}
